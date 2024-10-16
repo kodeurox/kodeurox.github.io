@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>AV Palato-Sinapia</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" type="image/png" href="images/favicon.png">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html"><img src="images/zirkel2.png" alt="Logo" style="max-width: 7%; height: auto; display: inline-block; margin-top: 10px;" class="hover-effect"></a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Startseite</a></li>
+							<li>
+								<a href="wirueberuns.html">Wir über uns</a>
+								<ul>
+									<li><a href="wirueberuns.html#leitspruch">Leitspruch</a></li>
+									<li><a href="wirueberuns.html#verbindungshaus">Verbindungshaus</a></li>
+									<li><a href="wirueberuns.html#traditionundmoderne">Tradition & Moderne</a></li>
+								</ul>
+							</li>
+							<li><a href="semesterprogramm.html">Semesterprogramm</a></li>
+							<li><a href="contact.html">Kontakt</a></li>
+							<li><a href="https://www.palato-sinapia.de/einloggen">Intern</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Semesterprogramm</h2>
+						</header>
+						<div style="text-align: center; margin-top: 20px;">
+							<iframe src="images/Semesterprogramm.pdf" width="80%" height="850px" style="border: none;">
+								Dein Browser unterstützt keine eingebetteten PDFs.
+							</iframe>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.instagram.com/billichwillich/" class="icon brands alt fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+						<li><a href="mailto:kontakt@palato-sinapia.de" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; AVPS - All rights reserved.</li><li>Template: <a href="http://html5up.net">HTML5 UP</a></li><li>Edited with &nbsp;♥&nbsp; by KOD€X</li>
+					</ul>
+					<ul class="copyright">
+						<li><p id="randomSentence"></p></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script>
+				// Liste der Sätze
+				const sentences = [
+					"Goofy: Ich weiß nicht wie cool ihr es findet, wenn ich an euren Füßen riechen würde.",
+					"Käpt'n: Ich hab nie Chips, die sind immer direkt weg.",
+					"KOD€X: Hier riechts nach diesem nassen forte. Das ist wie so ein Hund.",
+					"forte: Ja, nach den großen Auslegerunden stagnierts langsam. Käpt'n: Ja, da fehlt der Skill!",
+					"DoQ auf der Loggia zu forte: Und wo wohnst du?",
+					"Scooter: Ich bitte euch, also wirklich.",
+					"Käpt'n: Ich nehm doch keinen Rucksack mit zur Arbeit, ich bin doch kein Pöbel!",
+					"Käpt'n: Mann muss nicht immer gewinnen um gut zu sein, man muss nur konstant Mittelfeld sein.",
+					"forte: Bei meinem Bruder ist er länger!",
+					"forte rülpst 2 Sekunden den WiWi an und fragt dann: Bock auf ne Stafette?",
+					"Käpt'n: Ich hab versucht ihn reinzubekommen, aber er ist zu klein!",
+					"Stromberg: Die Schweine, haben die mir wirklich Alkohol ins Bier geschüttet!",
+					"Käpt'n: Ich bin stabil!"
+				];
+
+				// Funktion, um einen zufälligen Satz auszuwählen
+				function getRandomSentence() {
+					const randomIndex = Math.floor(Math.random() * sentences.length);
+					return sentences[randomIndex];
+				}
+
+				// Zufälligen Satz in das <p>-Element einfügen
+				document.getElementById("randomSentence").textContent = getRandomSentence();
+			</script>
+			<script>
+				// Funktion zum Auslesen von URL-Parametern
+				function getEmailFromURL() {
+					const params = new URLSearchParams(window.location.search);
+					const email = params.get('email');
+					if (email) {
+						document.getElementById('email').value = email; // Setzt die E-Mail im Eingabefeld
+					}
+				}
+
+				window.onload = getEmailFromURL; // Ruft die Funktion beim Laden der Seite auf
+			</script>
+			<script>
+				 // Funktion zum Anzeigen der Erfolgsmeldung
+				function showSuccessMessage(event) {
+					event.preventDefault(); // Verhindert das Standard-Submit-Verhalten
+					document.getElementById("successMessage").style.display = "block"; // Zeigt die Erfolgsmeldung an
+					document.querySelector("form").reset(); // Setzt das Formular zurück
+					return false; // Gibt false zurück, um das Standardverhalten zu verhindern
+				}
+			</script>
+			<style>
+				.hover-effect {
+					transition: transform 1s ease, opacity 1s ease; /* Sanfte Übergänge */
+				}
+
+				.hover-effect:hover {
+					transform: scale(1.1);
+				}
+			</style>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
