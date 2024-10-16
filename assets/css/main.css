@@ -3001,19 +3001,13 @@ input, select, textarea {
 
 	.spotlight {
 		background-attachment: fixed;
-		background-position: center center;
-		background-size: cover;
+		background-position: center;
+		background-size: 100vw;
 		box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
 		height: 100vh;
 		overflow: hidden;
 		position: relative;
 	}
-	@media (max-width: 1024px) {
-		.spotlight {
-			background-attachment: scroll;
-		}
-	}
-	
 
 		.spotlight:nth-last-of-type(1) {
 			z-index: 1;
