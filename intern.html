@@ -41,98 +41,29 @@
 				<div id="main" class="wrapper style1">
 					<div class="container">
 						<header class="major">
-							<h2>Kontakt</h2>
-						</header>
-						<header class="major2">
-							<!-- Table -->
-							<section>
-								<h3>Ämterbelegung</h3>
-								<h4>WS 2024/2025</h4>
-								<div class="table-wrapper">
-									<table>
-										<thead>
-											<tr>
-												<th>Amt</th>
-												<th>Amtsträger</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>X</td>
-												<td>Kim Borgwardt</td>
-											</tr>
-											<tr>
-												<td>XX</td>
-												<td>Tom David Wagner</td>
-											</tr>
-											<tr>
-												<td>XXX</td>
-												<td>Rico Hornung</td>
-											</tr>
-											<tr>
-												<td>FM</td>
-												<td>Johannes Aplyn</td>
-											</tr>
-											<tr>
-												<td>HKW</td>
-												<td>Rico Hornung</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</section>
-						</header>
-						<header class="major3">	
-							<!-- Lists -->
-							<section>
-								<h3>Kontaktdaten</h3>
-								<div>
-									<ul style="margin: 10;padding: 0; list-style-type: none;">
-										<li>Akademische Verbindung Palato-Sinapia</li>
-										<li><a href="https://maps.app.goo.gl/sq1onAY5jbDf7vue8" style="text-decoration: none; color: black;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'" target="_blank"><strong>Karl-Wilhelm-Straße 4</strong></a></li>
-										<li>D-76131 Karlsruhe</li>
-										<li>Telefon: (0721) 470 44 963</li>
-										<li>E-Mail: <a href="mailto:kontakt@palato-sinapia.de" style="text-decoration: none; color: black;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'"><strong>kontakt@palato-sinapia.de</strong></a></li>
-										<li>Hauptkasse IBAN: DE98660100750078800751</li>
-										<li>Bierkasse IBAN: DE77660100750216808752</li>
-									</ul>
-								</div>
-							</section>
-						</header>
-						<header id="kontaktformular">
-							<h3><center>Kontaktformular</center></h3>
+							<h2>Intern</h2>
 						</header>
 						<!-- Form -->
 							<section>
-								<form method="post" action="#" onsubmit="return showSuccessMessage(event)">
+								<h3>Aktuell noch kein richtiger Login, nur eine Demo mit Weiterleitung zur alten Website!</h3>
+								<form method="post" action="#" onsubmit="return redirectToInternal(event)">
 									<div class="row gtr-uniform gtr-50">
 										<div class="col-6 col-12-xsmall">
-											<input type="text" name="name" id="name" value="" placeholder="Name" required />
+											<input type="text" name="username" id="username" value="" placeholder="Benutzername" required />
 										</div>
 										<div class="col-6 col-12-xsmall">
-											<input type="email" name="email" id="email" value="" placeholder="E-Mail" required />
-										</div>
-										<div class="col-12">
-											<select name="subject" id="subject">
-												<option value="rp_x">Fragen zur Verbindung</option>
-												<option value="rp_hpw">Fragen zur Webseite</option>
-												<option value="rp_xx">Fragen zu Veranstaltungen</option>
-												<option value="rp_postmaster">Fragen zu AVPS-E-Mail-Adressen</option>
-											</select>
-										</div>
-										<div class="col-12">
-											<textarea name="content" id="content" placeholder="Nachricht eingeben" rows="6" required ></textarea>
+											<input type="password" name="password" id="password" value="" placeholder="Passwort" required />
 										</div>
 										<div class="col-12">
 											<ul class="actions">
-												<li><input type="submit" name="commit" value="Senden" class="primary" /></li>
+												<li><input type="submit" name="commit" value="Login" class="primary" /></li>
 												<li><input type="reset" value="Reset" /></li>
 											</ul>
 										</div>
 									</div>
 								</form>
 								<div id="successMessage" style="display: none; margin-top: 20px;">
-									<center>Vielen Dank!</br>Deine Nachricht wurde erfolgreich versendet.</center>
+									<center>Login erfolgreich!</br>Du wirst in den internen Bereich weitergeleitet.</center>
 								</div>
 							</section>
 					</div>
@@ -195,12 +126,18 @@
 				window.onload = getEmailFromURL; // Ruft die Funktion beim Laden der Seite auf
 			</script>
 			<script>
-				 // Funktion zum Anzeigen der Erfolgsmeldung
-				function showSuccessMessage(event) {
-					event.preventDefault(); // Verhindert das Standard-Submit-Verhalten
-					document.getElementById("successMessage").style.display = "block"; // Zeigt die Erfolgsmeldung an
-					document.querySelector("form").reset(); // Setzt das Formular zurück
-					return false; // Gibt false zurück, um das Standardverhalten zu verhindern
+				function redirectToInternal(event) {
+					event.preventDefault();  // Verhindert das Standard-Formular-Verhalten
+
+					// Zeige eine Erfolgsmeldung an
+					document.getElementById('successMessage').style.display = 'block';
+
+					// Leite nach 2 Sekunden weiter
+					setTimeout(function() {
+						window.location.href = 'https://www.palato-sinapia.de/einloggen';  // Pfad zur Zielseite
+					}, 2000);
+
+					return false;  // Verhindert das Absenden des Formulars
 				}
 			</script>
 			<style>
